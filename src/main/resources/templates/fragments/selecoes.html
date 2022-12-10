@@ -62,7 +62,7 @@
                                 <div class="col">
                                     <div class="progress progress-sm mr-2">
                                         <div class="progress-bar bg-info" role="progressbar" style="width: 50%"
-                                            aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                             aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </div>
                             </div>
@@ -82,9 +82,15 @@
 
         <div class="col-xl-12 col-md-12">
             <!-- DataTales Example -->
+
             <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Tabela de Seleções</h6>
+                <div style="display: flex; justify-content: space-between; align-items: center;" class="card-header py-3">
+                    <span style="margin-bottom: 0.5rem;
+                          font-weight: 800;
+                          line-height: 1.5;
+                          color: #4e73df !important;
+                          ">Tabela de Seleções</span>
+                          <button type="button" class="btn btn-primary">Adicionar Seleção</button>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -92,7 +98,7 @@
                             <thead>
                                 <tr>
                                     <th>Continente</th>
-                                    <th>Seleção<th>
+                                    <th>País</th>
                                     <th>Técnico</th>
                                     <th>Ações</th>
                                 </tr>
@@ -100,7 +106,7 @@
                             <tfoot>
                                 <tr>
                                     <th>Continente</th>
-                                    <th>Seleção<th>
+                                    <th>País</th>
                                     <th>Técnico</th>
                                     <th>Ações</th>
                                 </tr>
@@ -110,6 +116,10 @@
                                     <td th:text="${selecao.continente}">XXXXX</td>
                                     <td th:text="${selecao.nome}">XXXXX</td>
                                     <td th:text="${selecao.nomeTecnico}">XXXXX</td>
+                                    <td>
+                                        <button  th:action="@{/editTeam}" type="button" class="btn btn-secondary">Editar</button>
+                                        <button th:action="@{/removeTeam}"type="button" class="btn btn-danger">Remover</button>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
